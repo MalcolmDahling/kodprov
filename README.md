@@ -10,4 +10,4 @@ Axios
 <br>
 Sass
 <br>
-Helmet
+React-Helmet
