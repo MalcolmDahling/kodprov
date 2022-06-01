@@ -1,0 +1,34 @@
+.leftContainer{
+    width:15%;
+    height:100%;
+    padding-left:25px;
+    box-sizing:border-box;
+    padding-top:190px;
+    
+    background-color:#f0e7dd;
+
+    .category{
+        height:150px;
+        padding:20px;
+        box-sizing:border-box;
+        cursor:pointer;
+        user-select:none;
+
+        h2{
+            font-size:1.4rem;
+            pointer-events: none
+        }
+
+        p{
+            font-weight:bold;
+            font-size:0.8rem;
+            color:#969696;
+            pointer-events: none
+        }
+    }
+
+    .category:hover{
+        background-color:#f9f3ee;
+    }
+}
+
