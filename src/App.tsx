@@ -65,13 +65,39 @@ function App() {
 
             });
 
+
+        getWindowDimensions();
     }, []);
 
 
 
 
 
-    
+
+
+
+    //Gets window size and sets the variable so it can be used for responsive design.
+    const [version, setVersion] = useState('desktop');
+
+    function getWindowDimensions() {
+        const { innerWidth: width, innerHeight: height } = window;
+
+        if(width <= 1120){
+            setVersion('mobile');
+        }
+        else{
+            setVersion('desktop');
+        }
+    }
+
+    window.addEventListener('resize', getWindowDimensions);
+
+
+
+
+
+
+
 
 
     let description:any = {
@@ -104,10 +130,10 @@ function App() {
 
                 if(employee.developer.category == e.target.id || e.target.id == 'All'){
                     return(
-                        <div key={i} className="developer">
-                            <p>{employee.developer.category}</p>
+                        <div key={i}>
+                            <p>{employee.developer.category.toUpperCase()} DEVELOPER</p>
                             <p>{employee.developer.experienceAmount} år</p>
-                            <p>{employee.developer.office.city}</p>
+                            <p>{employee.developer.office.city.toUpperCase()}</p>
                             <p>{employee.developer.availability}%</p>
                             <p>{employee.developer.price} kr/h</p>
                             <p className="description">{description[employee.developer.category]}</p>
@@ -131,26 +157,28 @@ function App() {
 
                 <div className={"category " + activeTab.all} id="All" onClick={changeTab}>
                     <h2>ALL</h2>
-                    <p>{avaliableDevs.all} Developers available</p>
+                    {version == 'desktop' && <p>{avaliableDevs.all} Developers available</p>}
                 </div>
 
                 <div className={"category " + activeTab.frontend} id="Frontend" onClick={changeTab}>
-                    <h2>FRONTEND</h2>
-                    <p>{avaliableDevs.frontend} Developers available</p>
+                    {version == 'desktop' && <h2>FRONTEND</h2>}
+                    {version == 'mobile' && <h2>FE</h2>}
+                    {version == 'desktop' && <p>{avaliableDevs.frontend} Developers available</p>}
                 </div>
 
                 <div className={"category " + activeTab.backend} id="Backend" onClick={changeTab}>
-                    <h2>BACKEND</h2>
-                    <p>{avaliableDevs.backend} Developers available</p>
+                    {version == 'desktop' && <h2>BACKEND</h2>}
+                    {version == 'mobile' && <h2>BE</h2>}
+                    {version == 'desktop' && <p>{avaliableDevs.backend} Developers available</p>}
                 </div>
 
                 <div className={"category " + activeTab.devops} id="Devops" onClick={changeTab}>
-                    <h2>DEVOPS</h2>
-                    <p>{avaliableDevs.devops} Developers available</p>
+                    {version == 'desktop' && <h2>DEVOPS</h2>}
+                    {version == 'mobile' && <h2>DO</h2>}
+                    {version == 'desktop' && <p>{avaliableDevs.devops} Developers available</p>}
                 </div>
 
             </div>
-
 
 
             <div className="rightContainer">
