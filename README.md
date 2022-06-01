@@ -11,3 +11,5 @@ Axios
 Sass
 <br>
 React-Helmet
+<br>
+@types/react-helmet
