@@ -4,6 +4,8 @@ npm i
 npm start
 
 <h2>Packages used:</h2>
-axios
+React
 <br>
-sass
+Axios
+<br>
+Sass
