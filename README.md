@@ -9,7 +9,3 @@ React
 Axios
 <br>
 Sass
-<br>
-React-Helmet
-<br>
-@types/react-helmet
