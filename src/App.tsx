@@ -105,14 +105,14 @@ function App() {
     };
 
 
-    const changeTab = (e:any) => {
+    const changeTab = (e:React.MouseEvent<HTMLDivElement>) => {
 
-        setActiveTab({All:'', Frontend:'', Backend:'', Devops:'', [e.target.id]:'activeTab'});
+        setActiveTab({All:'', Frontend:'', Backend:'', Devops:'', [e.currentTarget.id]:'activeTab'});
 
         setMain(
             data!.employees.map((employee:IEmployee, i:number) => {
 
-                if(employee.developer.category == e.target.id || e.target.id == 'All'){
+                if(employee.developer.category == e.currentTarget.id || e.currentTarget.id == 'All'){
                     return(
                         <div key={i}>
                             <p>{employee.developer.category.toUpperCase()} DEVELOPER</p>
