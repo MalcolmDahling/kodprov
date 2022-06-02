@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/kruso-kodprov/static/css/main.c93fd99f.css",
+    "main.js": "/kruso-kodprov/static/js/main.7f0a482d.js",
+    "static/js/787.e2d773e1.chunk.js": "/kruso-kodprov/static/js/787.e2d773e1.chunk.js",
+    "index.html": "/kruso-kodprov/index.html",
+    "main.c93fd99f.css.map": "/kruso-kodprov/static/css/main.c93fd99f.css.map",
+    "main.7f0a482d.js.map": "/kruso-kodprov/static/js/main.7f0a482d.js.map",
+    "787.e2d773e1.chunk.js.map": "/kruso-kodprov/static/js/787.e2d773e1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c93fd99f.css",
+    "static/js/main.7f0a482d.js"
+  ]
+}
