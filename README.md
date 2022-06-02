@@ -8,8 +8,6 @@ App created with Create React App and Typescript
 - npm start
 
 <h2>Packages used:</h2>
-- React
-<br>
 - Axios
 <br>
 - Sass
