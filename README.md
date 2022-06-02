@@ -1,3 +1,6 @@
+<h2>App created with Create React App and Typescript</h2>
+<br>
+
 <h2>How to start:</h2>
 npm i
 <br>
