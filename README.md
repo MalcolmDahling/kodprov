@@ -1,4 +1,5 @@
-<h2>App created with Create React App and Typescript</h2>
+<h2>Kruso - Kodprov</h2>
+App created with Create React App and Typescript
 <br>
 
 <h2>How to start:</h2>
