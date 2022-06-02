@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App-Styling/App.scss';
 import './App-Styling/leftContainer.scss';
 import './App-Styling/rightContainer.scss';
@@ -21,10 +21,10 @@ function App() {
     });
 
     const [activeTab, setActiveTab] = useState({
-        all: '',
-        frontend: '',
-        backend: '',
-        devops: ''
+        All: '',
+        Frontend: '',
+        Backend: '',
+        Devops: ''
     });
     
 
@@ -32,8 +32,6 @@ function App() {
 
         axios.get<IEmployees>('./developers.json')
             .then(res => {
-
-                console.log(res);
 
                 setData(res.data);
                 
@@ -79,7 +77,7 @@ function App() {
     //Gets window size and sets the variable so it can be used for responsive design.
     const [version, setVersion] = useState('desktop');
 
-    function getWindowDimensions() {
+    const getWindowDimensions = () => {
         const { innerWidth: width, innerHeight: height } = window;
 
         if(width <= 1120){
@@ -107,23 +105,9 @@ function App() {
     };
 
 
-    function changeTab(e:any){
+    const changeTab = (e:any) => {
 
-        if(e.target.id == 'All'){
-            setActiveTab({all:'activeTab', frontend:'', backend:'', devops:''});
-        }
-
-        if(e.target.id == 'Frontend'){
-            setActiveTab({all:'', frontend:'activeTab', backend:'', devops:''});
-        }
-
-        if(e.target.id == 'Backend'){
-            setActiveTab({all:'', frontend:'', backend:'activeTab', devops:''});
-        }
-
-        if(e.target.id == 'Devops'){
-            setActiveTab({all:'', frontend:'', backend:'', devops:'activeTab'});
-        }
+        setActiveTab({All:'', Frontend:'', Backend:'', Devops:'', [e.target.id]:'activeTab'});
 
         setMain(
             data!.employees.map((employee:IEmployee, i:number) => {
@@ -132,19 +116,55 @@ function App() {
                     return(
                         <div key={i}>
                             <p>{employee.developer.category.toUpperCase()} DEVELOPER</p>
-                            <p>{employee.developer.experienceAmount} år</p>
-                            <p>{employee.developer.office.city.toUpperCase()}</p>
-                            <p>{employee.developer.availability}%</p>
-                            <p>{employee.developer.price} kr/h</p>
                             <p className="description">{description[employee.developer.category]}</p>
+
+                            <div>
+                                <p>{employee.developer.experienceAmount} år</p>
+                                <p>{employee.developer.office.city.toUpperCase()}</p>
+                                <p>{employee.developer.availability}%</p>
+                                <p>{employee.developer.price} kr/h</p>
+                            </div>
+                            
+                        </div>
+                    )
+                }  
+            })
+        );
+        
+        
+    }
+
+    
+
+
+
+    const handleChange = (e:React.FormEvent<HTMLInputElement>) => {
+
+        setActiveTab({All:'', Frontend:'', Backend:'', Devops:''});
+
+        setMain(
+            data!.employees.map((employee:IEmployee, i:number) => {
+
+                if( employee.developer.category.toLowerCase().includes(e.currentTarget.value.toLowerCase()) && e.currentTarget.value != '' ){
+                    return(
+                        <div key={i}>
+                            <p>{employee.developer.category.toUpperCase()} DEVELOPER</p>
+                            <p className="description">{description[employee.developer.category]}</p>
+
+                            <div>
+                                <p>{employee.developer.experienceAmount} år</p>
+                                <p>{employee.developer.office.city.toUpperCase()}</p>
+                                <p>{employee.developer.availability}%</p>
+                                <p>{employee.developer.price} kr/h</p>
+                            </div>
                         </div>  
                     )
                 }  
             })
-        );  
+        );
+        
     }
 
-    
 
 
 
@@ -153,38 +173,47 @@ function App() {
     return (
         <div className="app">
 
+
             <div className="leftContainer">
+                <nav>
+                    <div className={"category " + activeTab.All} id="All" onClick={changeTab}>
+                        <h2>ALL</h2>
+                        {version == 'desktop' && <p>{avaliableDevs.all} Developers available</p>}
 
-                <div className={"category " + activeTab.all} id="All" onClick={changeTab}>
-                    <h2>ALL</h2>
-                    {version == 'desktop' && <p>{avaliableDevs.all} Developers available</p>}
-                </div>
+                        {version == 'mobile' && <p>{avaliableDevs.all} Devs <br/> available</p>}
+                    </div>
 
-                <div className={"category " + activeTab.frontend} id="Frontend" onClick={changeTab}>
-                    {version == 'desktop' && <h2>FRONTEND</h2>}
-                    {version == 'mobile' && <h2>FE</h2>}
-                    {version == 'desktop' && <p>{avaliableDevs.frontend} Developers available</p>}
-                </div>
+                    <div className={"category " + activeTab.Frontend} id="Frontend" onClick={changeTab}>
+                        {version == 'desktop' && <h2>FRONTEND</h2>}
+                        {version == 'desktop' && <p>{avaliableDevs.frontend} Developers available</p>}
 
-                <div className={"category " + activeTab.backend} id="Backend" onClick={changeTab}>
-                    {version == 'desktop' && <h2>BACKEND</h2>}
-                    {version == 'mobile' && <h2>BE</h2>}
-                    {version == 'desktop' && <p>{avaliableDevs.backend} Developers available</p>}
-                </div>
+                        {version == 'mobile' && <h2>FRONT<br/>END</h2>}
+                        {version == 'mobile' && <p>{avaliableDevs.frontend} Devs <br/> available</p>}
+                    </div>
 
-                <div className={"category " + activeTab.devops} id="Devops" onClick={changeTab}>
-                    {version == 'desktop' && <h2>DEVOPS</h2>}
-                    {version == 'mobile' && <h2>DO</h2>}
-                    {version == 'desktop' && <p>{avaliableDevs.devops} Developers available</p>}
-                </div>
+                    <div className={"category " + activeTab.Backend} id="Backend" onClick={changeTab}>
+                        {version == 'desktop' && <h2>BACKEND</h2>}
+                        {version == 'desktop' && <p>{avaliableDevs.backend} Developers available</p>}
 
+                        {version == 'mobile' && <h2>BACK<br/>END</h2>}
+                        {version == 'mobile' && <p>{avaliableDevs.backend} Devs <br/> available</p>}
+                    </div>
+
+                    <div className={"category " + activeTab.Devops} id="Devops" onClick={changeTab}>
+                        {version == 'desktop' && <h2>DEVOPS</h2>}
+                        {version == 'desktop' && <p>{avaliableDevs.devops} Developers available</p>}
+
+                        {version == 'mobile' && <h2>DEV<br/>OPS</h2>}
+                        {version == 'mobile' && <p>{avaliableDevs.devops} Devs <br/> available</p>}
+                    </div>
+                </nav>
             </div>
 
 
             <div className="rightContainer">
                 <header>
                     <h1>FIND YOUR <span>EXPERT</span></h1>
-                    <input type="text" placeholder="Search"></input>
+                    <input type="text" placeholder="Search" onChange={handleChange}></input>
                     <input type="button" value="BOKA"></input>
                 </header>
 

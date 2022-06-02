@@ -1,12 +1,21 @@
+$color-header:#f9f3ee;
+$color-titleBar:#fbf8f5;
+
+$color-button:#5a7f82;
+$color-button-hover:#7dacaf;
+$color-button-text:white;
+
+$color-description:rgb(187, 187, 187);
+$color-divider:rgba(0, 0, 0, 0.1);
+
+
 .rightContainer{
     width:85%;
     height:100%;
 
-
-
     header{
-        background-color:#f9f3ee;
-        padding:20px;
+        background-color:$color-header;
+        padding:25px;
         
         h1{
             font-size:1.8rem;
@@ -20,8 +29,9 @@
         }
 
         input[type=text]{
-            height:40px;
-            width:320px;
+            height:50px;
+            max-width:360px;
+            width:75%;
             
             padding-left:20px;
             
@@ -30,23 +40,22 @@
         }
 
         input[type=button]{
-            height:40px;
-            width:17%;
+            height:50px;
+            width:16%;
             float:right;
 
-            background-color:#5a7f82;
-            color:white;
-            font-weight:bold;
+            background-color:$color-button;
+            color:$color-button-text;
             font-size:1.1rem;
             border:none;
             cursor:pointer;
         }
 
         input[type=button]:hover{
-            background-color:#7dacaf;
+            background-color:$color-button-hover;
         }
 
-    }//header
+    }
 
 
 
@@ -58,11 +67,9 @@
     .titleBar{
         width:100%;
         height:59px;
-        padding:10px;
-        padding-left:20px;
-        padding-right:20px;
+        padding:20px;
         box-sizing:border-box;
-        background-color:#fbf8f5;
+        background-color:$color-titleBar;
 
         h3{
             display:inline-block;
@@ -77,9 +84,11 @@
             width:28%;
         }
 
-        h3:nth-child(5){
+        h3:last-child{
             text-align:end;
             width:12%;
+            box-sizing: border-box;
+            padding-right:8px;
         }
     }
 
@@ -95,32 +104,52 @@
         div{
             height:75px;
             margin-bottom:20px;
-            border-bottom:1px solid rgba(0, 0, 0, 0.1);
+            border-bottom:1px solid $color-divider;
+            position:relative;
 
             p{
-                display:inline-block;
-                width:20%;
                 margin:0px;
                 padding:0px;
                 font-weight:bold;
-                font-size:14px; 
-            }
-
-            p:first-child{
-                width:28%;
-            }
-
-            p:nth-child(5){
-                text-align:end;
-                width:12%;
+                font-size:14px;
             }
 
 
             .description{
                 width:350px;
-                color:rgb(187, 187, 187);
+                color:$color-description;
                 font-weight:normal;
                 font-size:14px;
+            }
+
+            @media only screen and (max-width:1380px){
+                .description{
+                    width:200px;
+                }
+            }
+
+
+
+
+            div{
+                display:inline-block;
+                width:72%;
+                position:absolute;
+                right:0px;
+                top:10px;
+                border:none;
+                
+                p{
+                    display:inline-block;
+                    width:27.8%;
+                    margin-top:10px;
+                }
+
+                p:nth-child(4){
+                    text-align:end;
+                    width:16%;
+                    box-sizing: border-box;
+                }
             }
         }
     }
