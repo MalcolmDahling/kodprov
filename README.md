@@ -13,3 +13,5 @@ App created with Create React App and Typescript
 - Sass
 <br>
 - React-Helmet-Async
+<br>
+- GH-Pages
