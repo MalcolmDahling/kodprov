@@ -3,13 +3,13 @@ App created with Create React App and Typescript
 <br>
 
 <h2>How to start:</h2>
-npm i
+- npm i
 <br>
-npm start
+- npm start
 
 <h2>Packages used:</h2>
-React
+- React
 <br>
-Axios
+- Axios
 <br>
-Sass
+- Sass
