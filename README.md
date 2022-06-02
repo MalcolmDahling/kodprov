@@ -1,11 +1,15 @@
-<h2>How to start:</h2>
-npm i
+<h2>Kruso - Kodprov</h2>
+App created with Create React App and Typescript
 <br>
-npm start
+
+<h2>How to start:</h2>
+- npm i
+<br>
+- npm start
 
 <h2>Packages used:</h2>
-React
+- Axios
 <br>
-Axios
+- Sass
 <br>
-Sass
+- React-Helmet-Async
