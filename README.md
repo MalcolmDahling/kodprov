@@ -11,3 +11,5 @@ App created with Create React App and Typescript
 - Axios
 <br>
 - Sass
+<br>
+- React-Helmet
