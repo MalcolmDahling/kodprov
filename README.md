@@ -12,4 +12,4 @@ App created with Create React App and Typescript
 <br>
 - Sass
 <br>
-
+- React-Helmet-Async
