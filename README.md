@@ -15,3 +15,6 @@ App created with Create React App and Typescript
 - React-Helmet-Async
 <br>
 - GH-Pages
+
+<h2>GitHub Pages</h2>
+https://malcolmdahling.github.io/kruso-kodprov/
