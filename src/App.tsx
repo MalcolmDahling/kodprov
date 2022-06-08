@@ -73,19 +73,22 @@ function App() {
 
 
 
+    //Gets window and document size and sets the variables so it can be used for responsive design.
+    let body = document.body, html = document.documentElement;
+    let documentHeight = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
 
-    //Gets window size and sets the variable so it can be used for responsive design.
     const [version, setVersion] = useState('desktop');
 
+    
     const getWindowDimensions = () => {
-        const { innerWidth: width, innerHeight: height } = window;
+        const { innerWidth: width} = window;
 
         if(width <= 1120){
             setVersion('mobile');
         }
         else{
             setVersion('desktop');
-        }
+        }   
     }
 
     window.addEventListener('resize', getWindowDimensions);
@@ -94,7 +97,7 @@ function App() {
 
 
 
-
+    
 
 
 
@@ -174,7 +177,7 @@ function App() {
         <div className="app">
 
 
-            <div className="leftContainer">
+            <div className="leftContainer" style={{height: documentHeight}}>
                 <nav>
                     <div className={"category " + activeTab.All} id="All" onClick={changeTab}>
                         <h2>ALL</h2>
