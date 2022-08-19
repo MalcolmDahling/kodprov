@@ -12,11 +12,11 @@ root.render(
     <React.StrictMode>
         <HelmetProvider>
             <Helmet>
-                <title>Kruso - Kodprov</title>
-                <meta name="description" content="Kodprov från Kruso"/>
-                <meta property="og:title" content="Kruso - Kodprov"/>
+                <title>Kodprov</title>
+                <meta name="description" content="Kodprov"/>
+                <meta property="og:title" content="Kodprov"/>
                 <meta property="og:type" content="website"/>
-                <meta property="og:url" content="https://malcolmdahling.github.io/kruso-kodprov/"/>
+                <meta property="og:url" content="https://malcolmdahling.github.io/kodprov/"/>
             </Helmet>
 
             <App />
