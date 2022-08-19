@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/kruso-kodprov/static/css/main.58670109.css",
-    "main.js": "/kruso-kodprov/static/js/main.86e577be.js",
-    "static/js/787.e2d773e1.chunk.js": "/kruso-kodprov/static/js/787.e2d773e1.chunk.js",
-    "index.html": "/kruso-kodprov/index.html",
-    "main.58670109.css.map": "/kruso-kodprov/static/css/main.58670109.css.map",
-    "main.86e577be.js.map": "/kruso-kodprov/static/js/main.86e577be.js.map",
-    "787.e2d773e1.chunk.js.map": "/kruso-kodprov/static/js/787.e2d773e1.chunk.js.map"
+    "main.css": "/kodprov/static/css/main.58670109.css",
+    "main.js": "/kodprov/static/js/main.7ff2756d.js",
+    "static/js/787.a39d07a0.chunk.js": "/kodprov/static/js/787.a39d07a0.chunk.js",
+    "index.html": "/kodprov/index.html",
+    "main.58670109.css.map": "/kodprov/static/css/main.58670109.css.map",
+    "main.7ff2756d.js.map": "/kodprov/static/js/main.7ff2756d.js.map",
+    "787.a39d07a0.chunk.js.map": "/kodprov/static/js/787.a39d07a0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.58670109.css",
-    "static/js/main.86e577be.js"
+    "static/js/main.7ff2756d.js"
   ]
 }
