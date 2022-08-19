@@ -1,4 +1,4 @@
-<h2>Kruso - Kodprov</h2>
+<h2>Kodprov</h2>
 App created with Create React App and Typescript
 <br>
 
@@ -17,4 +17,4 @@ App created with Create React App and Typescript
 - GH-Pages
 
 <h2>GitHub Pages</h2>
-https://malcolmdahling.github.io/kruso-kodprov/
+https://malcolmdahling.github.io/kodprov/
